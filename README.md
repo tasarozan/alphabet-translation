@@ -1,2 +1,1 @@
 # alphabet-translator
-translate
