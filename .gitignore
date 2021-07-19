@@ -112,3 +112,5 @@ node_modules/
 # env var file for mongoDB, monkeylearn API,
 env-var-mongodb
 env-var-monkeylearn
+
+.coveralls.yml
