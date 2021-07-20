@@ -26,7 +26,7 @@ Currently you have 4 language choices but more are coming!
 ```js
 const alphabetTranslator = require('alphabet-translator')
 
-alphabet - translator(string, language)
+alphabetTranslator(string, language)
 ```
 
 # License
