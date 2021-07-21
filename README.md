@@ -3,7 +3,7 @@
 [![Build Status](https://app.travis-ci.com/tasarozan/alphabet-translator.svg?branch=main)](https://app.travis-ci.com/tasarozan/alphabet-translator)
 [![Coverage Status](https://coveralls.io/repos/github/tasarozan/alphabet-translator/badge.svg?branch=main)](https://coveralls.io/github/tasarozan/alphabet-translator?branch=main)
 
-Translate latin alphabet to cyrillic(Bulgarian, Ukrainian or Macedonian) or Greek alphabet
+Translate latin, cyrillic(Bulgarian, Ukrainian or Macedonian), Greek alphabets to each other
 
 # Installation
 
@@ -26,12 +26,14 @@ Currently you have 4 language choices but more are coming!
 ```js
 const alphabetTranslator = require('alphabet-translator')
 
-alphabetTranslator(string, language)
+alphabetTranslator(string, targetLanguage, originalLanguage)
 ```
+
+targetLanguage is 'greek' and originalLanguage is 'latin' by default!
 
 # Examples
 
-For cyrillic-macedonian;
+For latin to latin to cyrillic-macedonian;
 
 ```js
 const alphabetTranslator = require('alphabet-translator')
@@ -40,7 +42,7 @@ alphabetTranslator('sinus', 'cyrillic-macedonian')
 //output 'синус'
 ```
 
-For cyrillic-bulgarian;
+For latin to cyrillic-bulgarian;
 
 ```js
 const alphabetTranslator = require('alphabet-translator')
@@ -49,7 +51,7 @@ alphabetTranslator('hello', 'cyrillic-bulgarian')
 //output 'хeллo'
 ```
 
-For cyrillic-ukrainian;
+For latin to cyrillic-ukrainian;
 
 ```js
 const alphabetTranslator = require('alphabet-translator')
@@ -58,13 +60,31 @@ alphabetTranslator('translator', 'cyrillic-ukrainian')
 //output 'tрaнслatoр'
 ```
 
-For greek;
+For latin to greek;
 
 ```js
 const alphabetTranslator = require('alphabet-translator')
 
 alphabetTranslator('alphabet', 'greek')
 //output 'αλπηαβετ'
+```
+
+For greek to latin;
+
+```js
+const alphabetTranslator = require('alphabet-translator')
+
+alphabetTranslator('oζαν', 'latin', 'greek')
+//output 'ozan'
+```
+
+For greek to cyrillic-ukrainian;
+
+```js
+const alphabetTranslator = require('alphabet-translator')
+
+alphabetTranslator('σινψσ', 'cyrillic-ukrainian', 'greek')
+//output 'сiнус'
 ```
 
 # License
