@@ -6,59 +6,48 @@ function getKeyByValue(object, value) {
   return replacement
 }
 
-function fromLatinToAnotherLang(stringified, targetLanguage) {
-  Object.keys(alphabets[targetLanguage]).forEach((letter) => {
-    if (stringified.includes(letter)) {
-      stringified = stringified.replaceAll(
-        letter,
-        alphabets[targetLanguage][letter]
-      )
-    }
+function fromLatinToAnotherLang(stringified, targetLang) {
+  Object.keys(alphabets[targetLang]).forEach((letter) => {
+    if (!stringified.includes(letter)) return
+
+    stringified = stringified.replaceAll(letter, alphabets[targetLang][letter])
   })
   return stringified
 }
 
-function anotherLangToLatin(stringified, originalLang) {
-  const values = Object.keys(alphabets[originalLang]).map(
-    (value) => alphabets[originalLang][value]
+function anotherLangToLatin(stringified, originalLanguage) {
+  const values = Object.keys(alphabets[originalLanguage]).map(
+    (value) => alphabets[originalLanguage][value]
   )
 
   values.forEach((letter) => {
-    if (stringified.includes(letter)) {
-      const tempValue = values.filter((value) => value == letter)
+    if (!stringified.includes(letter)) return
 
-      const replacementLetter = getKeyByValue(
-        alphabets[originalLang],
-        tempValue
-      )
+    const tempValue = values.filter((value) => value == letter)
 
-      stringified = stringified.replaceAll(letter, replacementLetter)
-    }
+    const replacementLetter = getKeyByValue(
+      alphabets[originalLanguage],
+      tempValue
+    )
+
+    stringified = stringified.replaceAll(letter, replacementLetter)
   })
   return stringified
 }
-function translator(string, targetLanguage = 'greek', originalLang = 'latin') {
-  if (typeof string == 'object') throw new Error('You can not pass an object!')
-
+function translation(string, targetLang = 'greek', originalLanguage = 'latin') {
   const stringified = String(string)
 
-  if (originalLang == 'latin') {
-    const result = fromLatinToAnotherLang(stringified, targetLanguage)
-
-    return result
+  if (originalLanguage == 'latin') {
+    return fromLatinToAnotherLang(stringified, targetLang)
   }
 
-  if (targetLanguage == 'latin') {
-    const result = anotherLangToLatin(stringified, originalLang)
-
-    return result
+  if (targetLang == 'latin') {
+    return anotherLangToLatin(stringified, originalLanguage)
   }
 
-  const latinString = anotherLangToLatin(stringified, originalLang)
+  const latinString = anotherLangToLatin(stringified, originalLanguage)
 
-  const result = fromLatinToAnotherLang(latinString, targetLanguage)
-
-  return result
+  return fromLatinToAnotherLang(latinString, targetLang)
 }
 
-module.exports = translator
+module.exports = translation
