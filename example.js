@@ -1,3 +1,3 @@
 const alphabets = require('./index')
 
-console.log(alphabets('ozan', 'cyrillic-ukrainian'))
+console.log(alphabets('oζαν', 'cyrillic-ukrainian', 'greek'))
