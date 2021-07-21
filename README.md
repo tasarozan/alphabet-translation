@@ -29,6 +29,44 @@ const alphabetTranslator = require('alphabet-translator')
 alphabetTranslator(string, language)
 ```
 
+# Examples
+
+For cyrillic-macedonian;
+
+```js
+const alphabetTranslator = require('alphabet-translator')
+
+alphabetTranslator('sinus', 'cyrillic-macedonian')
+//output 'синус'
+```
+
+For cyrillic-bulgarian;
+
+```js
+const alphabetTranslator = require('alphabet-translator')
+
+alphabetTranslator('hello', 'cyrillic-bulgarian')
+//output 'хeллo'
+```
+
+For cyrillic-ukrainian;
+
+```js
+const alphabetTranslator = require('alphabet-translator')
+
+alphabetTranslator('translator', 'cyrillic-ukrainian')
+//output 'tрaнслatoр'
+```
+
+For greek;
+
+```js
+const alphabetTranslator = require('alphabet-translator')
+
+alphabetTranslator('alphabet', 'greek')
+//output 'αλπηαβετ'
+```
+
 # License
 
 MIT License
