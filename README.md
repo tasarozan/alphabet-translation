@@ -1,4 +1,4 @@
-# alphabet-translator
+# alphabet-translation
 
 [![Build Status](https://app.travis-ci.com/tasarozan/alphabet-translator.svg?branch=main)](https://app.travis-ci.com/tasarozan/alphabet-translator)
 [![Coverage Status](https://coveralls.io/repos/github/tasarozan/alphabet-translator/badge.svg?branch=main)](https://coveralls.io/github/tasarozan/alphabet-translator?branch=main)
@@ -10,7 +10,7 @@ Translate latin, cyrillic(Bulgarian, Ukrainian or Macedonian), Greek alphabets t
 Install the library
 
 ```sh
-npm i alphabet-translator
+npm i alphabet-translation
 
 ```
 
@@ -24,9 +24,9 @@ Currently you have 4 language choices but more are coming!
 4- 'greek'
 
 ```js
-const alphabetTranslator = require('alphabet-translator')
+const alphabetTranslation = require('alphabet-translation')
 
-alphabetTranslator(string, targetLanguage, originalLanguage)
+alphabetTranslation(string, targetLanguage, originalLanguage)
 ```
 
 targetLanguage is 'greek' and originalLanguage is 'latin' by default!
@@ -36,54 +36,54 @@ targetLanguage is 'greek' and originalLanguage is 'latin' by default!
 For latin to latin to cyrillic-macedonian;
 
 ```js
-const alphabetTranslator = require('alphabet-translator')
+const alphabetTranslation = require('alphabet-translation')
 
-alphabetTranslator('sinus', 'cyrillic-macedonian')
+alphabetTranslation('sinus', 'cyrillic-macedonian')
 //output 'синус'
 ```
 
 For latin to cyrillic-bulgarian;
 
 ```js
-const alphabetTranslator = require('alphabet-translator')
+const alphabetTranslation = require('alphabet-translation')
 
-alphabetTranslator('hello', 'cyrillic-bulgarian')
+alphabetTranslation('hello', 'cyrillic-bulgarian')
 //output 'хeллo'
 ```
 
 For latin to cyrillic-ukrainian;
 
 ```js
-const alphabetTranslator = require('alphabet-translator')
+const alphabetTranslation = require('alphabet-translation')
 
-alphabetTranslator('translator', 'cyrillic-ukrainian')
+alphabetTranslation('translation', 'cyrillic-ukrainian')
 //output 'tрaнслatoр'
 ```
 
 For latin to greek;
 
 ```js
-const alphabetTranslator = require('alphabet-translator')
+const alphabetTranslation = require('alphabet-translation')
 
-alphabetTranslator('alphabet', 'greek')
+alphabetTranslation('alphabet', 'greek')
 //output 'αλπηαβετ'
 ```
 
 For greek to latin;
 
 ```js
-const alphabetTranslator = require('alphabet-translator')
+const alphabetTranslation = require('alphabet-translation')
 
-alphabetTranslator('oζαν', 'latin', 'greek')
+alphabetTranslation('oζαν', 'latin', 'greek')
 //output 'ozan'
 ```
 
 For greek to cyrillic-ukrainian;
 
 ```js
-const alphabetTranslator = require('alphabet-translator')
+const alphabetTranslation = require('alphabet-translation')
 
-alphabetTranslator('σινψσ', 'cyrillic-ukrainian', 'greek')
+alphabetTranslation('σινψσ', 'cyrillic-ukrainian', 'greek')
 //output 'сiнус'
 ```
 
