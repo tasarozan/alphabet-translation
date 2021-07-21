@@ -1,2 +1,5 @@
 # Test files
 __tests__/
+examples.js
+.travis.yml
+.coveralls.yml
