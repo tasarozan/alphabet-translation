@@ -22,14 +22,19 @@ describe('alphabet-translator test', () => {
 
     expect(result).toBe('сiнус')
   })
-  it('alphabet-translator should throw an error when it receives invalid argument', () => {
-    const result = alphabets(121)
-
-    expect(result).toBe('Argument must be a string!')
+  it('alphabet-translator should throw an error when it receives an object', () => {
+    expect(() => alphabets({ ozan: 'ozan' }, 'greek')).toThrowError(
+      'You can not pass an object!'
+    )
   })
-  it('alphabet-translator should throw an error when it receives empty string', () => {
-    const result = alphabets('')
+  it('alphabet-translator should translate vice versa', () => {
+    const result = alphabets('oζαν', 'latin', 'greek')
 
-    expect(result).toBe('String can not be empty!')
+    expect(result).toBe('ozan')
+  })
+  it('alphabet-translator should translate from greek to cyrillic-ukrainian', () => {
+    const result = alphabets('oζαν', 'cyrillic-ukrainian', 'greek')
+
+    expect(result).toBe('oзaн')
   })
 })
