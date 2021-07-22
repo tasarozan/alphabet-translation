@@ -1,9 +1,7 @@
 const alphabets = require('./alphabets.json')
 
 function getKeyByValue(object, value) {
-  const replacement = Object.keys(object).filter((key) => object[key] == value)
-
-  return replacement
+  return Object.keys(object).filter((key) => object[key] == value)
 }
 
 function fromLatinToAnotherLang(stringified, targetLang) {
@@ -34,7 +32,8 @@ function anotherLangToLatin(stringified, originalLanguage) {
   })
   return stringified
 }
-function translation(string, targetLang = 'greek', originalLanguage = 'latin') {
+
+function translator(string, targetLang = 'greek', originalLanguage = 'latin') {
   const stringified = String(string)
 
   if (originalLanguage == 'latin') {
@@ -50,4 +49,4 @@ function translation(string, targetLang = 'greek', originalLanguage = 'latin') {
   return fromLatinToAnotherLang(latinString, targetLang)
 }
 
-module.exports = translation
+module.exports = translator
