@@ -1,5 +1,5 @@
 {
-  "name": "alphabet-translation",
+  "name": "alphabet-translator",
   "version": "1.1.3",
   "description": "",
   "main": "index.js",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tasarozan/alphabet-translation.git"
+    "url": "git+https://github.com/tasarozan/alphabet-translator.git"
   },
   "author": "Ozan Taşar",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tasarozan/alphabet-translation/issues"
+    "url": "https://github.com/tasarozan/alphabet-translator/issues"
   },
-  "homepage": "https://github.com/tasarozan/alphabet-translation#readme",
+  "homepage": "https://github.com/tasarozan/alphabet-translator#readme",
   "devDependencies": {
     "coveralls": "^3.1.1",
     "eslint": "^7.31.0",
