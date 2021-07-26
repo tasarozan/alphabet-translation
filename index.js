@@ -4,11 +4,14 @@ function getKeyByValue(object, value) {
   return Object.keys(object).filter((key) => object[key] == value)
 }
 
-function fromLatinToAnotherLang(stringified, targetLang) {
-  Object.keys(alphabets[targetLang]).forEach((letter) => {
+function fromLatinToAnotherLang(stringified, targetLanguage) {
+  Object.keys(alphabets[targetLanguage]).forEach((letter) => {
     if (!stringified.includes(letter)) return
 
-    stringified = stringified.replaceAll(letter, alphabets[targetLang][letter])
+    stringified = stringified.replaceAll(
+      letter,
+      alphabets[targetLanguage][letter]
+    )
   })
   return stringified
 }
@@ -33,20 +36,24 @@ function anotherLangToLatin(stringified, originalLanguage) {
   return stringified
 }
 
-function translator(string, targetLang = 'greek', originalLanguage = 'latin') {
+function translator(
+  string,
+  targetLanguage = 'greek',
+  originalLanguage = 'latin'
+) {
   const stringified = String(string)
 
   if (originalLanguage == 'latin') {
-    return fromLatinToAnotherLang(stringified, targetLang)
+    return fromLatinToAnotherLang(stringified, targetLanguage)
   }
 
-  if (targetLang == 'latin') {
+  if (targetLanguage == 'latin') {
     return anotherLangToLatin(stringified, originalLanguage)
   }
 
   const latinString = anotherLangToLatin(stringified, originalLanguage)
 
-  return fromLatinToAnotherLang(latinString, targetLang)
+  return fromLatinToAnotherLang(latinString, targetLanguage)
 }
 
 module.exports = translator
